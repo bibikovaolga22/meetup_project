@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+html {
+  font-size: 16px;
+}
+header {
+  max-width: 1512px;
+  display: flex;
+  padding: 15px 15px;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.language_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+nav,
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav {
+  gap: 40px;
+}
+nav form {
+  display: flex;
+  width: 592px;
+  position: relative;
+}
+nav form input {
+  border: 1px solid #d9d9d9;
+  outline: none;
+  font-size: 1rem;
+}
+nav form > input:nth-of-type(1) {
+  width: 50%;
+  height: 42px;
+  border-radius: 8px 0px 0px 8px;
+  text-indent: 40px;
+}
+nav form > input:nth-of-type(2) {
+  width: 50%;
+  height: 42px;
+  border-radius: 0 8px 8px 0;
+  display: flex;
+  padding: 14px;
+  justify-content: center;
+}
+nav form .button_icon {
+  background-color: #f65858;
+  position: absolute;
+  right: 0;
+  width: 42px;
+  height: 42px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 8px 8px 0;
+}
+nav form .button_icon img {
+  width: 20px;
+  height: 20px;
+}
+nav form .input_icon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 25%;
+  left: 2%;
+}
+
+.login {
+  gap: 22px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.login > a {
+  text-decoration: none;
+  color: #212121;
+  cursor: pointer;
+}
+
+.login > a:last-child {
+  padding: 8px 16px;
+  background-color: #00798a;
+  border-radius: 8px;
+  color: #ffffff;
+}

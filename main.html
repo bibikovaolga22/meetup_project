@@ -3,9 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles/style.css" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <nav>
+        <img src="assets/images/logo.svg" alt="" />
+        <form>
+          <input type="text" placeholder="Search events" />
+          <span class="input_icon">
+            <img src="assets/images/input_icon.svg" alt="search icon"
+          /></span>
+          <input type="text" value="Mountain View, CA" />
+          <span class="button_icon">
+            <img src="assets/images/search_icon.svg" alt="search icon"
+          /></span>
+        </form>
+      </nav>
+      <div class="login">
+        <div class="language_box">
+          <span class="material-symbols-outlined"> language </span>
+          <p>English</p>
+        </div>
+        <a href="#">Log in</a>
+        <a href="#">Sign Up</a>
+      </div>
+    </header>
+  </body>
   <script src="./script/script.js"></script>
 </html>
