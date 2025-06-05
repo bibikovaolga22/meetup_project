@@ -94,3 +94,151 @@ nav form .input_icon {
   border-radius: 8px;
   color: #ffffff;
 }
+
+/* /////////////// style main section banner /////////////// */
+
+main {
+  max-width: 1196px;
+  margin: 0 auto;
+}
+
+.banner,
+.events_near {
+  max-width: 100%;
+  display: flex;
+}
+.banner .text {
+  max-width: 564px;
+  min-width: 564px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 96px 0px;
+  max-width: 50%;
+}
+
+.banner .text h1 {
+  font-size: 2.6rem;
+}
+
+.banner .text p {
+  font-size: 1rem;
+}
+.banner .text a {
+  width: 125px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #00798a;
+  text-decoration: none;
+  color: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+}
+.banner .image {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ////////style events section/////////// */
+
+.events_near,
+.online_events {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.events_container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.events_nav {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+.events h2 {
+  font-size: 1.75rem;
+  font-weight: 500;
+}
+.events_nav .location {
+  width: 240px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #97cad153;
+  padding: 0px 10px;
+  border-radius: 8px;
+  color: #00798a;
+  font-weight: 600;
+  font-size: 1.25rem;
+}
+.see_all_events a,
+.upcoming_events a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #00798a;
+  font-weight: 500;
+}
+.grid {
+  max-width: 100%;
+  min-width: 10%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 28px;
+}
+
+.grid li {
+  height: 399px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+}
+
+.grid li h3 {
+  font-size: 1.25rem;
+
+  width: 80%;
+}
+.grid li p {
+  font-size: 0.86rem;
+  color: #707070;
+}
+.grid li .time p {
+  color: #212121;
+  font-size: 0.86rem;
+}
+.grid li .fees p,
+.grid li .going p {
+  font-size: 1rem;
+  color: #212121;
+}
+.grid li .time,
+.grid li .going,
+.grid li .fees {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.grid li .info {
+  display: flex;
+  gap: 16px;
+}
+.upcoming_events {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+}
