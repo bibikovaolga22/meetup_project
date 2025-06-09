@@ -2,13 +2,6 @@ const eventsContainer = document.querySelector(".events_list");
 const typeButton = document.querySelector(".type > button");
 const distanceButton = document.querySelector(".distance > button");
 const categoryButton = document.querySelector(".category > button");
-const eventType = document.querySelector(".event_type");
-const anyType = document.querySelector(".any_type");
-const online = document.querySelector(".online");
-const offline = document.querySelector(".offline");
-const distance = document.querySelectorAll(".event_distance");
-
-console.log(distance);
 const eventsStore = [
   {
     title: "INFJ Personality Type - Coffee Shop Meet & Greet",
@@ -91,10 +84,9 @@ const options = {
 
 console.log(eventsStore[0].date);
 
-function renderEvents(eventList) {
+function renderEvents() {
   const ul = document.createElement("ul");
-  eventsContainer.textContent = "";
-  eventList.forEach((event) => {
+  eventsStore.forEach((event) => {
     const li = document.createElement("li");
     const div = document.createElement("div");
     const h3 = document.createElement("h3");
@@ -107,6 +99,7 @@ function renderEvents(eventList) {
     icon.src = "/assets/images/icons/online_event.svg";
     const text = document.createElement("h4");
     text.textContent = "Online Event";
+
     eventType.append(icon, text);
     imageContainer.classList.add("image_container");
     imageContainer.style.backgroundImage = `url(${event.image})`;
@@ -126,24 +119,6 @@ function renderEvents(eventList) {
   eventsContainer.append(ul);
 }
 
-renderEvents(eventsStore);
+renderEvents();
 
-typeButton.addEventListener("click", () => {
-  eventType.classList.toggle("active");
-  anyType.addEventListener("click", () => {
-    renderEvents(eventsStore);
-    eventType.classList.remove("active");
-  });
-  online.addEventListener("click", () => {
-    const onlineEvents = eventsStore.filter((event) => event.type === "online");
-    renderEvents(onlineEvents);
-    eventType.classList.remove("active");
-  });
-  offline.addEventListener("click", () => {
-    const onlineEvents = eventsStore.filter(
-      (event) => event.type === "offline"
-    );
-    renderEvents(onlineEvents);
-    eventType.classList.remove("active");
-  });
-});
+typeButton.addEventListener("click", () => {});

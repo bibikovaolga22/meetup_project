@@ -927,10 +927,3 @@ footer {
   width: 16px;
   height: 16px;
 }
-
-.active {
-  display: flex;
-}
-.disabled {
-  display: none;
-}
