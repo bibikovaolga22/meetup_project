@@ -758,6 +758,7 @@ footer {
 .button_container {
   display: flex;
   gap: 18px;
+  margin-bottom: 50px;
 }
 .button_container > button {
   padding: 15px 25px;
@@ -810,10 +811,6 @@ footer {
   position: absolute;
   right: 100px;
 }
-.events_list {
-  height: 400px;
-}
-
 .events_NY .text {
   display: flex;
   flex-direction: column;
@@ -840,4 +837,53 @@ footer {
   width: 62px;
   background-color: #00798a;
   border-radius: 2px;
+}
+
+.events_list ul {
+  max-width: 604px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.events_list ul li p {
+  text-transform: uppercase;
+  color: #7c6f50;
+  font-weight: 600;
+}
+.events_list ul li span {
+  color: #707070;
+}
+
+.events_list ul li {
+  max-width: 100%;
+  display: flex;
+  border-top: 1px solid #d9d9d9;
+  gap: 12px;
+  padding-top: 16px;
+  line-height: 1.7;
+}
+.image_container {
+  min-width: 160px;
+  height: 100px;
+  background-size: cover;
+  border-radius: 8px;
+}
+.online_event {
+  width: 105px;
+  height: 20px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 4px;
+  margin: 8px;
+}
+.online_event h4 {
+  font-size: 0.75rem;
+  color: #707070;
+}
+.online_event img {
+  width: 16px;
+  height: 16px;
 }

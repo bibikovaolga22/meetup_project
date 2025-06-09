@@ -68,17 +68,53 @@ const eventsStore = [
   },
 ];
 
+const options = {
+  weekday: "short",
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+  hour: "numeric",
+  minute: "2-digit",
+  hour12: true,
+  timeZone: "UTC",
+  timeZoneName: "short",
+};
+
+console.log(eventsStore[0].date);
+
 function renderEvents() {
   const ul = document.createElement("ul");
   eventsStore.forEach((event) => {
     const li = document.createElement("li");
+    const div = document.createElement("div");
     const h3 = document.createElement("h3");
+    const p = document.createElement("p");
+    const imageContainer = document.createElement("div");
+    const span = document.createElement("span");
+    const eventType = document.createElement("div");
+    eventType.classList.add("online_event");
+    const icon = document.createElement("img");
+    icon.src = "/assets/images/icons/online_event.svg";
+    const text = document.createElement("h4");
+    text.textContent = "Online Event";
+
+    eventType.append(icon, text);
+    imageContainer.classList.add("image_container");
+    imageContainer.style.backgroundImage = `url(${event.image})`;
+    p.textContent = event.date.toLocaleString("en-US", options);
     h3.textContent = event.title;
-    li.append(h3);
+    if (event.type === "offline") {
+      span.textContent = event.category + `(${event.distance} km)`;
+    } else {
+      span.textContent = event.category;
+      imageContainer.append(eventType);
+    }
+
+    div.append(p, h3, span);
+    li.append(imageContainer, div);
     ul.append(li);
-    console.log(li);
   });
   eventsContainer.append(ul);
 }
 
-console.log(renderEvents());
+renderEvents();
