@@ -18,26 +18,57 @@
   </head>
   <body>
     <header>
-      <nav>
-        <img src="assets/images/logo.svg" alt="" />
-        <form>
-          <input type="text" placeholder="Search events" />
-          <span class="input_icon">
-            <img src="assets/images/icons/input_icon.svg" alt="search icon"
-          /></span>
-          <input type="text" value="Mountain View, CA" />
-          <span class="button_icon">
-            <img src="assets/images/icons/button_icon.svg" alt="search icon"
-          /></span>
-        </form>
-      </nav>
-      <div class="login">
-        <div class="language_box">
-          <span class="material-symbols-outlined"> language </span>
-          <p>English</p>
+      <div class="mobile_nav_container">
+        <nav class="mobile_nav">
+          <div class="logo_container">
+            <a href="./main.html" class="logo">
+              <img src="assets/images/logo.svg" alt=""
+            /></a>
+            <div class="login">
+              <div class="language_box">
+                <span class="material-symbols-outlined"> language </span>
+                <p>English</p>
+              </div>
+              <a href="#">Log in</a>
+              <a href="#">Sign Up</a>
+            </div>
+          </div>
+          <form>
+            <input type="text" placeholder="Search events" class="input1" />
+            <span class="input_icon">
+              <img src="assets/images/icons/input_icon.svg" alt="search icon"
+            /></span>
+            <input type="text" value="Mountain View, CA" class="input2" />
+            <span class="button_icon">
+              <img src="assets/images/icons/button_icon.svg" alt="search icon"
+            /></span>
+          </form>
+        </nav>
+      </div>
+      <div class="desktop_nav_container">
+        <nav class="desktop_nav">
+          <a href="./main.html" class="logo">
+            <img src="assets/images/logo.svg" alt=""
+          /></a>
+          <form>
+            <input type="text" placeholder="Search events" class="input1" />
+            <span class="input_icon">
+              <img src="assets/images/icons/input_icon.svg" alt="search icon"
+            /></span>
+            <input type="text" value="Mountain View, CA" class="input2" />
+            <span class="button_icon">
+              <img src="assets/images/icons/button_icon.svg" alt="search icon"
+            /></span>
+          </form>
+        </nav>
+        <div class="login">
+          <div class="language_box">
+            <span class="material-symbols-outlined"> language </span>
+            <p>English</p>
+          </div>
+          <a href="#">Log in</a>
+          <a href="#">Sign Up</a>
         </div>
-        <a href="#">Log in</a>
-        <a href="#">Sign Up</a>
       </div>
     </header>
     <main>
@@ -49,11 +80,10 @@
             skill sharing, there are thousands of people who share it on Meetup.
             Events are happening every day—sign up to join the fun.
           </p>
-          <a href="#">Join Meetup</a>
+          <a href="./page2.html" target="_blank">Join Meetup</a>
         </div>
-        <div class="image">
-          <img src="./assets/images/banner_image.png" alt="" />
-        </div>
+
+        <img src="./assets/images/banner_image.png" alt="" />
       </section>
       <section class="events_near">
         <div class="events_container">
@@ -235,7 +265,7 @@
       <section class="online_events">
         <div class="upcoming_events">
           <h2>Upcoming online events</h2>
-          <a href="#">See all events</a>
+          <span> <a href="#">See all events</a></span>
         </div>
         <ul class="grid">
           <li>
@@ -418,7 +448,9 @@
                 <p>
                   See who's hosting local events for all the things you love
                 </p>
-                <a href="#">Search events and groups</a>
+                <span>
+                  <a href="#">Search events and groups</a>
+                </span>
               </div>
             </div>
             <div class="card">
@@ -429,14 +461,16 @@
                   Create your own Meetup group, and draw from a community of
                   millions
                 </p>
-                <a href="#">Start a group</a>
+                <span>
+                  <a href="#">Start a group</a>
+                </span>
               </div>
             </div>
           </div>
         </div>
       </section>
       <section class="friendships">
-        <div class="firendships_container">
+        <div class="friendships_container">
           <h2>Friendships are made on Meetup</h2>
           <p>
             Since 2002, members have used Meetup to make new friends, meet
@@ -453,7 +487,7 @@
               to meet friends in her hometown. Learn how she used Meetup to make
               connections by joining a Girls Night Out Meetup group.
             </p>
-            <a href="#">Read more</a>
+            <span><a href="#">Read more</a></span>
           </li>
 
           <li>
@@ -467,7 +501,7 @@
               to meet friends in her hometown. Learn how she used Meetup to make
               connections by joining a Girls Night Out Meetup group.
             </p>
-            <a href="#">Read more</a>
+            <span><a href="#">Read more</a></span>
           </li>
           <li>
             <img
@@ -480,7 +514,7 @@
               to meet friends in her hometown. Learn how she used Meetup to make
               connections by joining a Girls Night Out Meetup group.
             </p>
-            <a href="#">Read more</a>
+            <span><a href="#">Read more</a></span>
           </li>
         </ul>
       </section>

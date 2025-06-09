@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="mobile_nav_container">
+        <nav class="mobile_nav">
+          <div class="logo_container">
+            <a href="./main.html" class="logo">
+              <img src="assets/images/logo.svg" alt=""
+            /></a>
+            <div class="login">
+              <div class="language_box">
+                <span class="material-symbols-outlined"> language </span>
+                <p>English</p>
+              </div>
+              <a href="#">Log in</a>
+              <a href="#">Sign Up</a>
+            </div>
+          </div>
+          <form>
+            <input type="text" placeholder="Search events" class="input1" />
+            <span class="input_icon">
+              <img src="assets/images/icons/input_icon.svg" alt="search icon"
+            /></span>
+            <input type="text" value="Mountain View, CA" class="input2" />
+            <span class="button_icon">
+              <img src="assets/images/icons/button_icon.svg" alt="search icon"
+            /></span>
+          </form>
+        </nav>
+      </div>
+      <div class="desktop_nav_container">
+        <nav class="desktop_nav">
+          <a href="./main.html" class="logo">
+            <img src="assets/images/logo.svg" alt=""
+          /></a>
+          <form>
+            <input type="text" placeholder="Search events" class="input1" />
+            <span class="input_icon">
+              <img src="assets/images/icons/input_icon.svg" alt="search icon"
+            /></span>
+            <input type="text" value="Mountain View, CA" class="input2" />
+            <span class="button_icon">
+              <img src="assets/images/icons/button_icon.svg" alt="search icon"
+            /></span>
+          </form>
+        </nav>
+        <div class="login">
+          <div class="language_box">
+            <span class="material-symbols-outlined"> language </span>
+            <p>English</p>
+          </div>
+          <a href="#">Log in</a>
+          <a href="#">Sign Up</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="events_NY">
+        <div class="text">
+          <h2>Events near New York, NY</h2>
+          <p>Events</p>
+        </div>
+        <div class="button_container">
+          <button class="type">
+            Any type
+            <img src="./assets/images/icons/arrow_down.svg" alt="" />
+          </button>
+          <button class="distance">
+            Any distance
+            <img src="./assets/images/icons/arrow_down.svg" alt="" />
+          </button>
+          <button class="category">
+            Any category
+            <img src="./assets/images/icons/arrow_down.svg" alt="" />
+          </button>
+        </div>
+        <div class="map_container">
+          <p>Find events near you</p>
+          <h2>New York</h2>
+          <div class="map">
+            <button>Browse a map</button>
+            <img src="./assets/images/icons/map.svg" alt="" />
+          </div>
+        </div>
+      </section>
+      <section class="events_list"></section>
+    </main>
+    <footer>
+      <section class="create_meetup">
+        <h4>Create your own Meetup group.</h4>
+        <a href="#">Get Started</a>
+      </section>
+      <section class="contacs_info">
+        <ul>
+          <li>Your Account</li>
+          <li>Sign Up</li>
+          <li>Log In</li>
+          <li>Help</li>
+          <li>Become an Affiliate</li>
+        </ul>
+        <ul>
+          <li>Disover</li>
+          <li>Groups</li>
+          <li>Calendar</li>
+          <li>Topics</li>
+          <li>Cities</li>
+          <li>Online Events</li>
+          <li>Local Guides</li>
+          <li>Make Friends</li>
+        </ul>
+        <ul>
+          <li>Meetup</li>
+          <li>About</li>
+          <li>Blog</li>
+          <li>Meetup Pro</li>
+          <li>Careers</li>
+          <li>Apps</li>
+          <li>Podcast</li>
+        </ul>
+      </section>
+      <section class="social_media">
+        <div class="follow_us">
+          <p>Follow us</p>
+          <ul>
+            <li>
+              <img src="./assets/images/icons/social_media/fb.svg" alt="" />
+            </li>
+            <li>
+              <img
+                src="./assets/images/icons/social_media/twitter.svg"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="./assets/images/icons/social_media/youtube.svg"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="./assets/images/icons/social_media/instagram.svg"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="./assets/images/icons/social_media/ticktock.svg"
+                alt=""
+              />
+            </li>
+          </ul>
+        </div>
+        <div class="payments">
+          <img src="./assets/images/icons/social_media/google_pay" alt="" />
+          <img src="./assets/images/icons/social_media/app_store" alt="" />
+        </div>
+      </section>
+      <ul class="footer_bottom">
+        <li>© 2024 Meetup</li>
+        <li>Terms of Service</li>
+        <li>Privacy Policy</li>
+        <li>Do Not Sell or Share My Personal Data</li>
+        <li>Cookie Policy</li>
+        <li>Help</li>
+      </ul>
+    </footer>
+  </body>
+  <script src="./script/script.js"></script>
+</html>
