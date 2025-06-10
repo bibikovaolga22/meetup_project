@@ -2,13 +2,15 @@ const eventsContainer = document.querySelector(".events_list");
 const typeButton = document.querySelector(".type > button");
 const distanceButton = document.querySelector(".distance > button");
 const categoryButton = document.querySelector(".category > button");
+const categoryContainer = document.querySelector(".category");
 const eventType = document.querySelector(".event_type");
 const anyType = document.querySelector(".any_type");
 const online = document.querySelector(".online");
 const offline = document.querySelector(".offline");
-const distance = document.querySelectorAll(".event_distance");
+const distance = document.querySelector(".event_distance");
+const distanceListItems = distance.children;
+const eventCategory = document.querySelector(".event_category");
 
-console.log(distance);
 const eventsStore = [
   {
     title: "INFJ Personality Type - Coffee Shop Meet & Greet",
@@ -20,6 +22,7 @@ const eventsStore = [
     attendees: 99,
     category: "Hobbies and Passions",
     distance: 50,
+    id: 1,
   },
   {
     title:
@@ -32,6 +35,7 @@ const eventsStore = [
     attendees: 43,
     category: "Technology",
     distance: 25,
+    id: 2,
   },
   {
     title: "Book 40+ Appointments Per Month Using AI and Automation",
@@ -42,6 +46,7 @@ const eventsStore = [
     type: "online",
     category: "Technology",
     distance: 10,
+    id: 2,
   },
   {
     title: "Dump writing group weekly meetup",
@@ -53,6 +58,7 @@ const eventsStore = [
     attendees: 77,
     category: "Business",
     distance: 100,
+    id: 3,
   },
   {
     title: "Over 40s, 50s, & 60s Senior Singles Chat, Meet & Dating Community",
@@ -64,6 +70,7 @@ const eventsStore = [
     attendees: 140,
     category: "Social Activities",
     distance: 74,
+    id: 4,
   },
   {
     title: "All Nations - Manhattan Missions Church Bible Study",
@@ -74,6 +81,7 @@ const eventsStore = [
     type: "offline",
     category: "Health and Wellbeing",
     distance: 15,
+    id: 5,
   },
 ];
 
@@ -132,18 +140,153 @@ typeButton.addEventListener("click", () => {
   eventType.classList.toggle("active");
   anyType.addEventListener("click", () => {
     renderEvents(eventsStore);
+    document.querySelector(".type button span").textContent = "Any type";
     eventType.classList.remove("active");
   });
   online.addEventListener("click", () => {
     const onlineEvents = eventsStore.filter((event) => event.type === "online");
     renderEvents(onlineEvents);
+    document.querySelector(".type button span").textContent = "Online ";
     eventType.classList.remove("active");
   });
   offline.addEventListener("click", () => {
-    const onlineEvents = eventsStore.filter(
+    const offlineEvents = eventsStore.filter(
       (event) => event.type === "offline"
     );
-    renderEvents(onlineEvents);
+    renderEvents(offlineEvents);
+    document.querySelector(".type button span").textContent = "Offline ";
     eventType.classList.remove("active");
+  });
+});
+
+distanceButton.addEventListener("click", () => {
+  distance.classList.toggle("active");
+  distanceListItems[0].addEventListener("click", () => {
+    renderEvents(eventsStore);
+    distance.classList.remove("active");
+  });
+  distanceListItems[1].addEventListener("click", () => {
+    const filteredFive = eventsStore.filter(
+      (event) => event.type === "offline" && event.distance <= 5
+    );
+    renderEvents(filteredFive);
+    document.querySelector(".distance button span").textContent = "5 km";
+    distance.classList.remove("active");
+  });
+  distanceListItems[2].addEventListener("click", () => {
+    const filteredFive = eventsStore.filter(
+      (event) => event.type === "offline" && event.distance <= 10
+    );
+    renderEvents(filteredFive);
+    distance.classList.remove("active");
+  });
+  distanceListItems[3].addEventListener("click", () => {
+    const filteredFive = eventsStore.filter(
+      (event) => event.type === "offline" && event.distance <= 15
+    );
+    renderEvents(filteredFive);
+    distance.classList.remove("active");
+  });
+  distanceListItems[4].addEventListener("click", () => {
+    const filteredFive = eventsStore.filter(
+      (event) => event.type === "offline" && event.distance <= 25
+    );
+    renderEvents(filteredFive);
+    distance.classList.remove("active");
+  });
+  distanceListItems[5].addEventListener("click", () => {
+    const filteredFive = eventsStore.filter(
+      (event) => event.type === "offline" && event.distance <= 50
+    );
+    renderEvents(filteredFive);
+    distance.classList.remove("active");
+  });
+  distanceListItems[6].addEventListener("click", () => {
+    const filteredFive = eventsStore.filter(
+      (event) => event.type === "offline" && event.distance <= 75
+    );
+    renderEvents(filteredFive);
+    distance.classList.remove("active");
+  });
+  distanceListItems[7].addEventListener("click", () => {
+    const filteredFive = eventsStore.filter(
+      (event) => event.type === "offline" && event.distance <= 100
+    );
+    renderEvents(filteredFive);
+    distance.classList.remove("active");
+  });
+});
+
+// const categoriesList = eventsStore.map((event) => {
+//   return event.category;
+// });
+
+// const newArr = ["Any", ...categoriesList];
+// const newCategoriesList = [...new Set(newArr)];
+// console.log(newCategoriesList);
+
+// categoryButton.addEventListener("click", (event) => {
+//   const ul = document.createElement("ul");
+//   ul.classList.add("event_category");
+//   newCategoriesList.forEach((event) => {
+//     const li = document.createElement("li");
+//     li.textContent = event;
+//     ul.append(li);
+//     ul.classList.add("active");
+//     categoryContainer.append(ul);
+//   });
+//   const buttons = Array.from(document.querySelectorAll(".category ul li"));
+
+//   buttons.forEach((button, index) => {
+//     button.addEventListener("click", () => {
+//       if (index === 0) {
+//         renderEvents(eventsStore);
+//       } else {
+//         const filtered = eventsStore.filter((event) => {
+//           return index === event.id;
+//         });
+//         renderEvents(filtered);
+//       }
+//       ul.textContent = "";
+//     });
+//   });
+// });
+
+categoryButton.addEventListener("click", (e) => {
+  const items = document.querySelectorAll(".dropdown-item");
+  console.log(items);
+  eventCategory.classList.toggle("active");
+
+  items.forEach((item) => {
+    item.addEventListener("click", (e) => {
+      if (e.target.matches(".any")) {
+        renderEvents(eventsStore);
+      } else if (e.target.matches(".social")) {
+        const filteredSocial = eventsStore.filter((socialEvent) => {
+          return e.target.textContent === socialEvent.category;
+        });
+        renderEvents(filteredSocial);
+      } else if (e.target.matches(".hobbies")) {
+        const filteredHobbies = eventsStore.filter((hobbiesEvent) => {
+          return e.target.textContent === hobbiesEvent.category;
+        });
+        renderEvents(filteredHobbies);
+      } else if (e.target.matches(".health")) {
+        const filteredHealth = eventsStore.filter((healthEvent) => {
+          return e.target.textContent === healthEvent.category;
+        });
+        renderEvents(filteredHealth);
+      } else if (e.target.matches(".business")) {
+        const filteredBusiness = eventsStore.filter((businessEvent) => {
+          return e.target.textContent === businessEvent.category;
+        });
+        renderEvents(filteredBusiness);
+      } else if (e.target.matches(".technology")) {
+        const filteredTechnology = eventsStore.filter((technologyEvent) => {
+          return e.target.textContent === technologyEvent.category;
+        });
+        renderEvents(filteredTechnology);
+      }
+    });
   });
 });

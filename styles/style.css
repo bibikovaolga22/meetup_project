@@ -145,24 +145,6 @@ nav form .input_icon {
   .desktop_nav_container {
     display: none;
   }
-
-  /* header nav {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    align-items: flex-start;
-  }
-  .login {
-    display: flex;
-    align-items: center;
-    align-self: baseline;
-  }
-  .logo {
-    order: 1;
-  }
-  form {
-    order: 2;
-  } */
 }
 /* /////////////// style main section banner /////////////// */
 
@@ -884,6 +866,7 @@ footer {
   display: flex;
   flex-direction: column;
   gap: 50px;
+  min-height: 300px;
 }
 .events_list ul li p {
   text-transform: uppercase;
