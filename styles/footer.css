@@ -1,0 +1,99 @@
+footer {
+  background-color: #212121;
+  color: #fff;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1512px;
+  align-items: center;
+  margin-top: 64px;
+}
+
+.create_meetup a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 30px;
+  border-radius: 6px;
+  border: 2px solid white;
+}
+.create_meetup {
+  display: flex;
+  max-width: 1120px;
+  width: 100%;
+  display: flex;
+  margin-top: 24px;
+  gap: 34px;
+  align-items: center;
+  padding: 20px;
+}
+.create_meetup h4 {
+  font-size: 1rem;
+  text-align: center;
+}
+.contacs_info {
+  border-top: 1.5px solid rgb(107, 103, 103);
+  max-width: 1120px;
+  width: 100%;
+  margin-top: 33px;
+  display: flex;
+  padding: 20px;
+}
+.contacs_info ul {
+  max-width: 373px;
+  width: 100%;
+}
+.contacs_info li {
+  padding-top: 16px;
+  list-style: none;
+  font-weight: 200;
+  font-size: 0.86rem;
+  line-height: 1;
+}
+.contacs_info li:nth-of-type(1) {
+  font-weight: 600;
+}
+.social_media {
+  display: flex;
+  max-width: 1120px;
+  width: 100%;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.follow_us {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.follow_us ul {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.follow_us ul li {
+  list-style: none;
+  cursor: pointer;
+}
+.payments {
+  padding: 25px 0px 25px 0px;
+}
+.footer_bottom {
+  display: flex;
+  width: 100%;
+  max-width: 1120px;
+  gap: 24px;
+  padding-bottom: 40px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+.footer_bottom li {
+  text-align: center;
+  list-style: none;
+  font-weight: 200;
+  margin-top: 24px;
+  font-size: 0.86rem;
+}
+.footer_bottom li:nth-of-type(1) {
+  font-weight: 400;
+}

@@ -1,15 +1,6 @@
 const eventsContainer = document.querySelector(".events_list");
-const typeButton = document.querySelector(".type > button");
-const distanceButton = document.querySelector(".distance > button");
-const categoryButton = document.querySelector(".category > button");
-const categoryContainer = document.querySelector(".category");
-const eventType = document.querySelector(".event_type");
-const anyType = document.querySelector(".any_type");
-const online = document.querySelector(".online");
-const offline = document.querySelector(".offline");
-const distance = document.querySelector(".event_distance");
-const distanceListItems = distance.children;
-const eventCategory = document.querySelector(".event_category");
+const desktopSearch = document.querySelector(".desktop_nav_container form");
+const mobileSearch = document.querySelector(".mobile_nav_container form");
 
 const eventsStore = [
   {
@@ -22,7 +13,6 @@ const eventsStore = [
     attendees: 99,
     category: "Hobbies and Passions",
     distance: 50,
-    id: 1,
   },
   {
     title:
@@ -35,7 +25,6 @@ const eventsStore = [
     attendees: 43,
     category: "Technology",
     distance: 25,
-    id: 2,
   },
   {
     title: "Book 40+ Appointments Per Month Using AI and Automation",
@@ -46,7 +35,6 @@ const eventsStore = [
     type: "online",
     category: "Technology",
     distance: 10,
-    id: 2,
   },
   {
     title: "Dump writing group weekly meetup",
@@ -58,7 +46,6 @@ const eventsStore = [
     attendees: 77,
     category: "Business",
     distance: 100,
-    id: 3,
   },
   {
     title: "Over 40s, 50s, & 60s Senior Singles Chat, Meet & Dating Community",
@@ -70,7 +57,6 @@ const eventsStore = [
     attendees: 140,
     category: "Social Activities",
     distance: 74,
-    id: 4,
   },
   {
     title: "All Nations - Manhattan Missions Church Bible Study",
@@ -81,7 +67,6 @@ const eventsStore = [
     type: "offline",
     category: "Health and Wellbeing",
     distance: 15,
-    id: 5,
   },
 ];
 
@@ -96,8 +81,6 @@ const options = {
   timeZone: "UTC",
   timeZoneName: "short",
 };
-
-console.log(eventsStore[0].date);
 
 function renderEvents(eventList) {
   const ul = document.createElement("ul");
@@ -135,151 +118,107 @@ function renderEvents(eventList) {
 
 renderEvents(eventsStore);
 
-typeButton.addEventListener("click", () => {
-  eventType.classList.toggle("active");
-  anyType.addEventListener("click", () => {
+function filterType(select) {
+  const value = select.value;
+  if (value === "any_type") {
     renderEvents(eventsStore);
-    document.querySelector(".type button span").textContent = "Any type";
-    eventType.classList.remove("active");
-  });
-  online.addEventListener("click", () => {
+  } else if (value === "online") {
     const onlineEvents = eventsStore.filter((event) => event.type === "online");
     renderEvents(onlineEvents);
-    document.querySelector(".type button span").textContent = "Online ";
-    eventType.classList.remove("active");
-  });
-  offline.addEventListener("click", () => {
+  } else if (value === "offline") {
     const offlineEvents = eventsStore.filter(
       (event) => event.type === "offline"
     );
     renderEvents(offlineEvents);
-    document.querySelector(".type button span").textContent = "Offline ";
-    eventType.classList.remove("active");
-  });
-});
-
-distanceButton.addEventListener("click", () => {
-  distance.classList.toggle("active");
-  distanceListItems[0].addEventListener("click", () => {
+  }
+}
+function filterDistance(select) {
+  const value = select.value;
+  if (value === "any_distance") {
     renderEvents(eventsStore);
-    distance.classList.remove("active");
-  });
-  distanceListItems[0].addEventListener("click", () => {
-    renderEvents(eventsStore);
-    document.querySelector(".distance button span").textContent =
-      "Any Distance";
-    distance.classList.remove("active");
-  });
-  distanceListItems[1].addEventListener("click", () => {
-    const filteredFive = eventsStore.filter(
+  } else if (value === "five") {
+    const filtered = eventsStore.filter(
       (event) => event.type === "offline" && event.distance <= 5
     );
-    renderEvents(filteredFive);
-    document.querySelector(".distance button span").textContent = "5 km";
-    distance.classList.remove("active");
-  });
-  distanceListItems[2].addEventListener("click", () => {
-    const filteredFive = eventsStore.filter(
+    renderEvents(filtered);
+  } else if (value === "ten") {
+    const filtered = eventsStore.filter(
       (event) => event.type === "offline" && event.distance <= 10
     );
-    document.querySelector(".distance button span").textContent = "10 km";
-    renderEvents(filteredFive);
-    distance.classList.remove("active");
-  });
-  distanceListItems[3].addEventListener("click", () => {
-    const filteredFive = eventsStore.filter(
+    renderEvents(filtered);
+  } else if (value === "fifteen") {
+    const filtered = eventsStore.filter(
       (event) => event.type === "offline" && event.distance <= 15
     );
-    document.querySelector(".distance button span").textContent = "15 km";
-    renderEvents(filteredFive);
-    distance.classList.remove("active");
-  });
-  distanceListItems[4].addEventListener("click", () => {
-    const filteredFive = eventsStore.filter(
+    renderEvents(filtered);
+  } else if (value === "twenty-five") {
+    const filtered = eventsStore.filter(
       (event) => event.type === "offline" && event.distance <= 25
     );
-    document.querySelector(".distance button span").textContent = "25 km";
-    renderEvents(filteredFive);
-    distance.classList.remove("active");
-  });
-  distanceListItems[5].addEventListener("click", () => {
-    const filteredFive = eventsStore.filter(
+    renderEvents(filtered);
+  } else if (value === "fifty") {
+    const filtered = eventsStore.filter(
       (event) => event.type === "offline" && event.distance <= 50
     );
-    document.querySelector(".distance button span").textContent = "50 km";
-    renderEvents(filteredFive);
-    distance.classList.remove("active");
-  });
-  distanceListItems[6].addEventListener("click", () => {
-    const filteredFive = eventsStore.filter(
+    renderEvents(filtered);
+  } else if (value === "seventy-five") {
+    const filtered = eventsStore.filter(
       (event) => event.type === "offline" && event.distance <= 75
     );
-    document.querySelector(".distance button span").textContent = "75 km";
-    renderEvents(filteredFive);
-    distance.classList.remove("active");
-  });
-  distanceListItems[7].addEventListener("click", () => {
-    const filteredFive = eventsStore.filter(
+    renderEvents(filtered);
+  } else if (value === "hundred") {
+    const filtered = eventsStore.filter(
       (event) => event.type === "offline" && event.distance <= 100
     );
-    document.querySelector(".distance button span").textContent = "100 km";
-    renderEvents(filteredFive);
-    distance.classList.remove("active");
-  });
-});
+    renderEvents(filtered);
+  }
+}
 
-categoryButton.addEventListener("click", (e) => {
-  const items = document.querySelectorAll(".dropdown-item");
-  eventCategory.classList.toggle("active");
-
-  items.forEach((item) => {
-    item.addEventListener("click", (e) => {
-      if (e.target.matches(".any")) {
-        renderEvents(eventsStore);
-        document.querySelector(".category button span").textContent =
-          "Any category ";
-        eventCategory.classList.remove("active");
-      } else if (e.target.matches(".social")) {
-        const filteredSocial = eventsStore.filter((socialEvent) => {
-          return e.target.textContent === socialEvent.category;
-        });
-        renderEvents(filteredSocial);
-        document.querySelector(".category button span").textContent =
-          "Social Activities ";
-        eventCategory.classList.remove("active");
-      } else if (e.target.matches(".hobbies")) {
-        const filteredHobbies = eventsStore.filter((hobbiesEvent) => {
-          return e.target.textContent === hobbiesEvent.category;
-        });
-        renderEvents(filteredHobbies);
-        document.querySelector(".category button span").textContent =
-          "Hobbies and Passions";
-        eventCategory.classList.remove("active");
-      } else if (e.target.matches(".health")) {
-        const filteredHealth = eventsStore.filter((healthEvent) => {
-          return e.target.textContent === healthEvent.category;
-        });
-        renderEvents(filteredHealth);
-        document.querySelector(".category button span").textContent =
-          "Health and Wellbeing";
-        eventCategory.classList.remove("active");
-      } else if (e.target.matches(".business")) {
-        const filteredBusiness = eventsStore.filter((businessEvent) => {
-          return e.target.textContent === businessEvent.category;
-        });
-        renderEvents(filteredBusiness);
-        document.querySelector(".category button span").textContent =
-          "Business";
-        eventCategory.classList.remove("active");
-      } else if (e.target.matches(".technology")) {
-        const filteredTechnology = eventsStore.filter((technologyEvent) => {
-          return e.target.textContent === technologyEvent.category;
-        });
-        renderEvents(filteredTechnology);
-        document.querySelector(".category button span").textContent =
-          "Technology";
-        eventCategory.classList.remove("active");
-      }
+function filterCategory(select) {
+  const value = select.value;
+  if (value === "any_category") {
+    renderEvents(eventsStore);
+  } else if (value === "social") {
+    const filtered = eventsStore.filter((socialEvent) => {
+      return socialEvent.category === "Social Activities";
     });
+    renderEvents(filtered);
+  } else if (value === "hobby") {
+    const filtered = eventsStore.filter((socialEvent) => {
+      return socialEvent.category === "Hobbies and Passions";
+    });
+    renderEvents(filtered);
+  } else if (value === "health") {
+    const filtered = eventsStore.filter((socialEvent) => {
+      return socialEvent.category === "Health and Wellbeing";
+    });
+    renderEvents(filtered);
+  } else if (value === "business") {
+    const filtered = eventsStore.filter((socialEvent) => {
+      return socialEvent.category === "Business";
+    });
+    renderEvents(filtered);
+  } else if (value === "technology") {
+    const filtered = eventsStore.filter((socialEvent) => {
+      return socialEvent.category === "Technology";
+    });
+    renderEvents(filtered);
+  }
+}
+
+desktopSearch.addEventListener("input", (e) => {
+  const filterByTitle = eventsStore.filter((event) => {
+    const value = e.target.value;
+    const eventTitle = event.title;
+    return eventTitle.toLowerCase().startsWith(value.toLowerCase());
   });
+  renderEvents(filterByTitle);
+});
+mobileSearch.addEventListener("input", (e) => {
+  const filterByTitle = eventsStore.filter((event) => {
+    const value = e.target.value;
+    const eventTitle = event.title;
+    return eventTitle.toLowerCase().startsWith(value.toLowerCase());
+  });
+  renderEvents(filterByTitle);
 });
