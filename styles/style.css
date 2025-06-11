@@ -235,6 +235,9 @@ main {
   height: 16px;
   width: 20px;
 }
+.grid .online_event_page1_mobile {
+  display: none;
+}
 .upcoming_events {
   width: 100%;
   margin-top: 40px;
@@ -582,9 +585,7 @@ footer {
     font-size: 12px;
     gap: 18px;
   }
-  .input1 {
-    width: 300px;
-  }
+
   .banner {
     margin-bottom: 20px;
   }
@@ -615,9 +616,23 @@ footer {
     display: none;
   }
   .grid > li .online_event_page1 {
-    top: 12px;
-    left: 1px;
+    display: none;
   }
+  .grid .online_event_page1_mobile {
+    order: 4;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+  }
+  .grid > li .online_event_page1_mobile img {
+    width: 10px;
+    height: 10px;
+  }
+  .grid > li .online_event_page1_mobile h4 {
+    font-size: 0.5rem;
+    color: #707070;
+  }
+
   .grid > li .going {
     display: none;
   }
@@ -641,8 +656,9 @@ footer {
     display: none;
   }
   .grid > li img {
-    width: 120px;
-    height: 66px;
+    width: 150px;
+    height: auto;
+    object-fit: contain;
   }
 
   .popular_cities ul li:last-child {
@@ -687,7 +703,30 @@ footer {
   padding-right: 20px;
 }
 
-.button_container .type button,
+select#type,
+select#distance,
+select#category {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding: 15px 25px;
+  background-color: #ededed;
+  border: none;
+  border-radius: 40px;
+  text-align: center;
+  display: flex;
+  gap: 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  outline: none;
+  white-space: nowrap;
+}
+select#type > option {
+  width: 20px;
+}
+/* Optional: Add an arrow */
+
+/* .button_container .type button,
 .button_container .distance button,
 .button_container .category button {
   padding: 15px 25px;
@@ -699,8 +738,10 @@ footer {
   gap: 12px;
   font-size: 0.9rem;
   cursor: pointer;
-}
+  white-space: nowrap;
+} */
 .events_NY {
+  max-width: 100%;
   position: relative;
 }
 .map_container {
@@ -744,14 +785,6 @@ footer {
 @media (max-width: 1023px) {
   .map_container {
     display: none;
-  }
-}
-@media (max-width: 528px) {
-  .button_container {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 50px;
-    position: relative;
   }
 }
 
@@ -851,11 +884,35 @@ footer {
   padding-top: 16px;
   line-height: 1.7;
 }
+
 .image_container {
   min-width: 160px;
   height: 100px;
   background-size: cover;
   border-radius: 8px;
+}
+@media (max-width: 450px) {
+  .button_container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    overflow: scroll;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+  }
+
+  .events_list ul li p {
+    font-size: 0.56rem;
+  }
+  .events_list ul li h3 {
+    font-size: 0.7rem;
+  }
+  .image_container {
+    min-width: 130px;
+    height: 75px;
+  }
+  .events_list ul li span {
+    font-size: 0.56rem;
+  }
 }
 .online_event {
   width: 105px;

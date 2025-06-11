@@ -77,7 +77,30 @@
           <p>Events</p>
         </div>
         <div class="button_container">
-          <div class="type">
+          <select id="type" name="options" onchange="filterType(this)">
+            <option value="any_type">Any Type</option>
+            <option value="online">Online</option>
+            <option value="offline">Offline</option>
+          </select>
+          <select id="distance" name="options" onchange="filterDistance(this)">
+            <option value="any_distance">Any Distance</option>
+            <option value="five">5 km</option>
+            <option value="ten">10 km</option>
+            <option value="fifteen">15 km</option>
+            <option value="twenty-five">25 km</option>
+            <option value="fifty">50 km</option>
+            <option value="seventy-five">75 km</option>
+            <option value="hundred">100 km</option>
+          </select>
+          <select id="category" name="options" onchange="filterCategory(this)">
+            <option value="any_category">Any Category</option>
+            <option value="social">Social Activities</option>
+            <option value="hobby">Hobbies and Passions</option>
+            <option value="health">Health and Wellbein</option>
+            <option value="business">Business</option>
+            <option value="technology">Technology</option>
+          </select>
+          <!-- <div class="type">
             <button>
               <span>Any type</span>
               <img src="./assets/images/icons/arrow_down.svg" alt="" />
@@ -87,8 +110,8 @@
               <li class="online">Online</li>
               <li class="offline">Offline</li>
             </ul>
-          </div>
-          <div class="distance">
+          </div> -->
+          <!-- <div class="distance">
             <button>
               <span> Any distance</span>
               <img src="./assets/images/icons/arrow_down.svg" alt="" />
@@ -103,8 +126,8 @@
               <li class="seventy-five">75 km</li>
               <li class="hundred">100 km</li>
             </ul>
-          </div>
-          <div class="category">
+          </div> -->
+          <!-- <div class="category">
             <button>
               <span> Any category</span>
               <img src="./assets/images/icons/arrow_down.svg" alt="" />
@@ -114,10 +137,10 @@
               <li class="social dropdown-item">Social Activities</li>
               <li class="hobbies dropdown-item">Hobbies and Passions</li>
               <li class="health dropdown-item">Health and Wellbeing</li>
-              <li class="business dropdown-item">Business</li>
+              <li class="business dropdown-item">BusinessBusiness</li>
               <li class="technology dropdown-item">Technology</li>
             </ul>
-          </div>
+          </div> -->
         </div>
         <div class="map_container">
           <p>Find events near you</p>
@@ -211,5 +234,5 @@
       </ul>
     </footer>
   </body>
-  <script src="./script/script.js"></script>
+  <script src="./script/new.js"></script>
 </html>
