@@ -4,148 +4,7 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
-html {
-  font-size: 16px;
-}
 
-header {
-  max-width: 1512px;
-  display: flex;
-  padding: 15px 15px;
-  margin: 0 auto;
-  margin-bottom: 90px;
-}
-.desktop_nav_container {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-.mobile_nav_container {
-  display: none;
-}
-.language_box {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-}
-nav,
-.login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-nav {
-  gap: 40px;
-}
-nav form {
-  display: flex;
-  width: 592px;
-  position: relative;
-}
-nav form input {
-  border: 1px solid #d9d9d9;
-  outline: none;
-  font-size: 1rem;
-}
-.input1 {
-  width: 100%;
-  height: 42px;
-  border-radius: 8px 0px 0px 8px;
-  text-indent: 40px;
-}
-.input2 {
-  width: 100%;
-  height: 42px;
-  border-radius: 0px;
-  border-right: none;
-  display: flex;
-  padding: 14px;
-  justify-content: center;
-}
-nav form .button_icon {
-  background-color: #f65858;
-  min-width: 42px;
-  height: 42px;
-  color: #ffffff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 0 8px 8px 0;
-  cursor: pointer;
-}
-
-nav form .button_icon img {
-  width: 20px;
-  height: 20px;
-}
-nav form .input_icon {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  top: 25%;
-  left: 2%;
-}
-
-.login {
-  gap: 22px;
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-.login > a {
-  text-decoration: none;
-  color: #212121;
-  cursor: pointer;
-}
-
-.login > a:last-child {
-  padding: 8px 16px;
-  background-color: #00798a;
-  border-radius: 8px;
-  color: #ffffff;
-  transition: all 0.1s ease;
-}
-.login > a:last-child:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  transform: scale(1.02);
-}
-
-@media (max-width: 1024px) {
-  header {
-    margin-bottom: 50px;
-  }
-  .input2 {
-    display: none;
-  }
-  nav form {
-    width: 520px;
-  }
-}
-@media (max-width: 940px) {
-  .mobile_nav_container {
-    display: flex;
-    width: 100%;
-  }
-  .mobile_nav {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-  }
-  .logo_container {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-  nav form {
-    width: 100%;
-  }
-  nav {
-    gap: 11px;
-  }
-  .desktop_nav_container {
-    display: none;
-  }
-}
 /* /////////////// style main section banner /////////////// */
 
 main {
@@ -316,6 +175,12 @@ main {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  position: relative;
+}
+.grid .content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 .grid li img {
   max-width: 100%;
@@ -349,6 +214,26 @@ main {
 .grid li .info {
   display: flex;
   gap: 16px;
+}
+.grid .online_event_page1 {
+  width: 105px;
+  height: 20px;
+  display: flex;
+  position: absolute;
+  background-color: #ffffff;
+  top: 11px;
+  left: 17px;
+  justify-self: center;
+  align-items: center;
+  border-radius: 4px;
+}
+.grid .online_event_page1 h4 {
+  font-size: 12px;
+  color: #707070;
+}
+.grid .online_event_page1 img {
+  height: 16px;
+  width: 20px;
 }
 .upcoming_events {
   width: 100%;
@@ -396,6 +281,7 @@ main {
 }
 .join_meetup_container img {
   padding: 20px 56px 20px 0px;
+  max-width: 100%;
 }
 @media (max-width: 768px) {
   .join_meetup_container img {
@@ -484,6 +370,7 @@ main {
 .popular_cities ul {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+  gap: 5px;
 }
 
 .popular_cities ul li {
@@ -578,6 +465,7 @@ main {
 @media (max-width: 603px) {
   .friendships ul {
     flex-wrap: wrap;
+    justify-content: center;
   }
 }
 
@@ -654,6 +542,7 @@ footer {
 .follow_us ul {
   display: flex;
   gap: 32px;
+  flex-wrap: wrap;
 }
 .follow_us ul li {
   list-style: none;
@@ -682,7 +571,7 @@ footer {
   font-weight: 400;
 }
 
-@media (max-width: 394px) {
+@media (max-width: 499px) {
   html {
     font-size: 16px;
   }
@@ -706,12 +595,56 @@ footer {
     font-size: 12px;
   }
   .grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .grid > li {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    border-top: 1px solid grey;
+    padding-top: 10px;
+    max-width: 499px;
+  }
+  .grid .content {
+    width: 300px;
+    display: flex;
+    gap: 7px;
+  }
+  .grid > li .fees {
     display: none;
   }
-  .popular_cities ul {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px;
+  .grid > li .online_event_page1 {
+    top: 12px;
+    left: 1px;
   }
+  .grid > li .going {
+    display: none;
+  }
+  .grid > li h3 {
+    order: 2;
+    font-size: 1rem;
+    width: 100%;
+  }
+  .grid > li .time {
+    order: 1;
+  }
+  .grid .content .time p {
+    color: #7c6f50;
+    font-weight: 600;
+  }
+
+  .grid > li p {
+    order: 3;
+  }
+  .grid > li .time img {
+    display: none;
+  }
+  .grid > li img {
+    width: 120px;
+    height: 66px;
+  }
+
   .popular_cities ul li:last-child {
     display: none;
   }
@@ -736,12 +669,22 @@ footer {
   }
 }
 
+@media (max-width: 450px) {
+  .popular_cities ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
 /* //////////////////second page style/////////////// */
 .button_container {
   display: flex;
   gap: 18px;
   margin-bottom: 50px;
   position: relative;
+  max-width: 100%;
+  min-width: 300px;
+  padding-right: 20px;
 }
 
 .button_container .type button,
@@ -798,6 +741,20 @@ footer {
   position: absolute;
   right: 100px;
 }
+@media (max-width: 1023px) {
+  .map_container {
+    display: none;
+  }
+}
+@media (max-width: 528px) {
+  .button_container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 50px;
+    position: relative;
+  }
+}
+
 .events_NY .text {
   display: flex;
   flex-direction: column;
@@ -861,20 +818,29 @@ footer {
   border-radius: 2px;
 }
 
-.events_list ul {
+.events_list ul,
+.events_container ul {
   max-width: 604px;
+  min-width: 300px;
   display: flex;
   flex-direction: column;
   gap: 50px;
   min-height: 300px;
+  padding-right: 20px;
 }
 .events_list ul li p {
   text-transform: uppercase;
   color: #7c6f50;
   font-weight: 600;
+  font-size: 0.9rem;
+}
+.events_list ul li h3 {
+  font-size: 1rem;
 }
 .events_list ul li span {
   color: #707070;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .events_list ul li {

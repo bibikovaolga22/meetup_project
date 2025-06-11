@@ -121,12 +121,11 @@ function renderEvents(eventList) {
     p.textContent = event.date.toLocaleString("en-US", options);
     h3.textContent = event.title;
     if (event.type === "offline") {
-      span.textContent = event.category + `(${event.distance} km)`;
+      span.textContent = event.category + ` (${event.distance} km)`;
     } else {
       span.textContent = event.category;
       imageContainer.append(eventType);
     }
-
     div.append(p, h3, span);
     li.append(imageContainer, div);
     ul.append(li);
@@ -165,6 +164,12 @@ distanceButton.addEventListener("click", () => {
     renderEvents(eventsStore);
     distance.classList.remove("active");
   });
+  distanceListItems[0].addEventListener("click", () => {
+    renderEvents(eventsStore);
+    document.querySelector(".distance button span").textContent =
+      "Any Distance";
+    distance.classList.remove("active");
+  });
   distanceListItems[1].addEventListener("click", () => {
     const filteredFive = eventsStore.filter(
       (event) => event.type === "offline" && event.distance <= 5
@@ -177,6 +182,7 @@ distanceButton.addEventListener("click", () => {
     const filteredFive = eventsStore.filter(
       (event) => event.type === "offline" && event.distance <= 10
     );
+    document.querySelector(".distance button span").textContent = "10 km";
     renderEvents(filteredFive);
     distance.classList.remove("active");
   });
@@ -184,6 +190,7 @@ distanceButton.addEventListener("click", () => {
     const filteredFive = eventsStore.filter(
       (event) => event.type === "offline" && event.distance <= 15
     );
+    document.querySelector(".distance button span").textContent = "15 km";
     renderEvents(filteredFive);
     distance.classList.remove("active");
   });
@@ -191,6 +198,7 @@ distanceButton.addEventListener("click", () => {
     const filteredFive = eventsStore.filter(
       (event) => event.type === "offline" && event.distance <= 25
     );
+    document.querySelector(".distance button span").textContent = "25 km";
     renderEvents(filteredFive);
     distance.classList.remove("active");
   });
@@ -198,6 +206,7 @@ distanceButton.addEventListener("click", () => {
     const filteredFive = eventsStore.filter(
       (event) => event.type === "offline" && event.distance <= 50
     );
+    document.querySelector(".distance button span").textContent = "50 km";
     renderEvents(filteredFive);
     distance.classList.remove("active");
   });
@@ -205,6 +214,7 @@ distanceButton.addEventListener("click", () => {
     const filteredFive = eventsStore.filter(
       (event) => event.type === "offline" && event.distance <= 75
     );
+    document.querySelector(".distance button span").textContent = "75 km";
     renderEvents(filteredFive);
     distance.classList.remove("active");
   });
@@ -212,80 +222,63 @@ distanceButton.addEventListener("click", () => {
     const filteredFive = eventsStore.filter(
       (event) => event.type === "offline" && event.distance <= 100
     );
+    document.querySelector(".distance button span").textContent = "100 km";
     renderEvents(filteredFive);
     distance.classList.remove("active");
   });
 });
 
-// const categoriesList = eventsStore.map((event) => {
-//   return event.category;
-// });
-
-// const newArr = ["Any", ...categoriesList];
-// const newCategoriesList = [...new Set(newArr)];
-// console.log(newCategoriesList);
-
-// categoryButton.addEventListener("click", (event) => {
-//   const ul = document.createElement("ul");
-//   ul.classList.add("event_category");
-//   newCategoriesList.forEach((event) => {
-//     const li = document.createElement("li");
-//     li.textContent = event;
-//     ul.append(li);
-//     ul.classList.add("active");
-//     categoryContainer.append(ul);
-//   });
-//   const buttons = Array.from(document.querySelectorAll(".category ul li"));
-
-//   buttons.forEach((button, index) => {
-//     button.addEventListener("click", () => {
-//       if (index === 0) {
-//         renderEvents(eventsStore);
-//       } else {
-//         const filtered = eventsStore.filter((event) => {
-//           return index === event.id;
-//         });
-//         renderEvents(filtered);
-//       }
-//       ul.textContent = "";
-//     });
-//   });
-// });
-
 categoryButton.addEventListener("click", (e) => {
   const items = document.querySelectorAll(".dropdown-item");
-  console.log(items);
   eventCategory.classList.toggle("active");
 
   items.forEach((item) => {
     item.addEventListener("click", (e) => {
       if (e.target.matches(".any")) {
         renderEvents(eventsStore);
+        document.querySelector(".category button span").textContent =
+          "Any category ";
+        eventCategory.classList.remove("active");
       } else if (e.target.matches(".social")) {
         const filteredSocial = eventsStore.filter((socialEvent) => {
           return e.target.textContent === socialEvent.category;
         });
         renderEvents(filteredSocial);
+        document.querySelector(".category button span").textContent =
+          "Social Activities ";
+        eventCategory.classList.remove("active");
       } else if (e.target.matches(".hobbies")) {
         const filteredHobbies = eventsStore.filter((hobbiesEvent) => {
           return e.target.textContent === hobbiesEvent.category;
         });
         renderEvents(filteredHobbies);
+        document.querySelector(".category button span").textContent =
+          "Hobbies and Passions";
+        eventCategory.classList.remove("active");
       } else if (e.target.matches(".health")) {
         const filteredHealth = eventsStore.filter((healthEvent) => {
           return e.target.textContent === healthEvent.category;
         });
         renderEvents(filteredHealth);
+        document.querySelector(".category button span").textContent =
+          "Health and Wellbeing";
+        eventCategory.classList.remove("active");
       } else if (e.target.matches(".business")) {
         const filteredBusiness = eventsStore.filter((businessEvent) => {
           return e.target.textContent === businessEvent.category;
         });
         renderEvents(filteredBusiness);
+        document.querySelector(".category button span").textContent =
+          "Business";
+        eventCategory.classList.remove("active");
       } else if (e.target.matches(".technology")) {
         const filteredTechnology = eventsStore.filter((technologyEvent) => {
           return e.target.textContent === technologyEvent.category;
         });
         renderEvents(filteredTechnology);
+        document.querySelector(".category button span").textContent =
+          "Technology";
+        eventCategory.classList.remove("active");
       }
     });
   });
