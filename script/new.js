@@ -1,19 +1,6 @@
 const eventsContainer = document.querySelector(".events_list");
-// const typeButton = document.querySelector("#type");
-
-// const distanceButton = document.querySelector("#distance");
-// const categoryButton = document.querySelector("#category");
-// const anyType = document.querySelector(".any_type");
-// const anyType = (document.querySelector("#type").value = "any_type");
-// console.log(anyType);
-// const categoryContainer = document.querySelector(".category");
-// const eventType = document.querySelector(".event_type");
-// const anyType = document.querySelector(".any_type");
-// const online = document.querySelector(".online");
-// const offline = document.querySelector(".offline");
-// const distance = document.querySelector(".event_distance");
-// const distanceListItems = distance.children;
-// const eventCategory = document.querySelector(".event_category");
+const desktopSearch = document.querySelector(".desktop_nav_container form");
+const mobileSearch = document.querySelector(".mobile_nav_container form");
 
 const eventsStore = [
   {
@@ -219,23 +206,19 @@ function filterCategory(select) {
   }
 }
 
-document
-  .querySelector(".mobile_nav_container form")
-  .addEventListener("input", (e) => {
-    const filterByTitle = eventsStore.filter((event) => {
-      const value = e.target.value;
-      const eventTitle = event.title;
-      return eventTitle.toLowerCase().startsWith(value.toLowerCase());
-    });
-    renderEvents(filterByTitle);
+desktopSearch.addEventListener("input", (e) => {
+  const filterByTitle = eventsStore.filter((event) => {
+    const value = e.target.value;
+    const eventTitle = event.title;
+    return eventTitle.toLowerCase().startsWith(value.toLowerCase());
   });
-document
-  .querySelector(".desktop_nav_container form")
-  .addEventListener("input", (e) => {
-    const filterByTitle = eventsStore.filter((event) => {
-      const value = e.target.value;
-      const eventTitle = event.title;
-      return eventTitle.toLowerCase().startsWith(value.toLowerCase());
-    });
-    renderEvents(filterByTitle);
+  renderEvents(filterByTitle);
+});
+mobileSearch.addEventListener("input", (e) => {
+  const filterByTitle = eventsStore.filter((event) => {
+    const value = e.target.value;
+    const eventTitle = event.title;
+    return eventTitle.toLowerCase().startsWith(value.toLowerCase());
   });
+  renderEvents(filterByTitle);
+});
