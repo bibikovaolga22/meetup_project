@@ -124,6 +124,9 @@ nav form .input_icon {
   }
 }
 @media (max-width: 940px) {
+  header {
+    margin-bottom: 20px;
+  }
   .mobile_nav_container {
     display: flex;
     width: 100%;
