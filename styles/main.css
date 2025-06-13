@@ -819,3 +819,9 @@ select#type > option {
   height: 16px;
 }
 
+.active {
+  display: flex;
+}
+.disabled {
+  display: none;
+}

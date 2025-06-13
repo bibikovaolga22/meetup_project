@@ -1,5 +1,5 @@
 const eventsContainer = document.querySelector(".events_list");
-const desktopSearch = document.querySelector(".desktop_nav_container form");
+const desktopSearch = document.querySelector(".desktop_nav_container .input1");
 const mobileSearch = document.querySelector(".mobile_nav_container form");
 
 const eventsStore = [
